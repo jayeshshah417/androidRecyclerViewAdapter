@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.HashMap;
 import java.util.List;
 
-public class RecylerViewAdapter extends RecyclerView.Adapter implements
+public class ORecylerViewAdapter extends RecyclerView.Adapter implements
         RecyclerView.OnClickListener, SectionIndexer {
-    public static final String TAG = RecylerViewAdapter.class.getSimpleName();
+    public static final String TAG = ORecylerViewAdapter.class.getSimpleName();
 
     private Integer mLayout = null;
     private LayoutInflater mInflater = null;
@@ -37,7 +37,7 @@ public class RecylerViewAdapter extends RecyclerView.Adapter implements
     private String[] sections = new String[0];
     private List<ODataRow> dataRows;
 
-    public RecylerViewAdapter(Context context, int layout) {
+    public ORecylerViewAdapter(Context context, int layout) {
         super();
         mLayout = layout;
         mInflater = LayoutInflater.from(context);
@@ -99,7 +99,7 @@ public class RecylerViewAdapter extends RecyclerView.Adapter implements
 
 
     public  class OViewHolder extends RecyclerView.ViewHolder{
-        public OViewHolder(View itemView, final RecylerViewAdapter.IOnItemClickListener listener1) {
+        public OViewHolder(View itemView, final ORecylerViewAdapter.IOnItemClickListener listener1) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
