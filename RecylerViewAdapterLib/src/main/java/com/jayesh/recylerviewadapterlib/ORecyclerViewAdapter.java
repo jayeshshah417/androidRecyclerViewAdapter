@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.SectionIndexer;
 
 import androidx.annotation.NonNull;
@@ -16,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.HashMap;
 import java.util.List;
 
-public class ORecylerViewAdapter extends RecyclerView.Adapter implements
+public class ORecyclerViewAdapter extends RecyclerView.Adapter implements
         RecyclerView.OnClickListener, SectionIndexer {
-    public static final String TAG = ORecylerViewAdapter.class.getSimpleName();
+    public static final String TAG = ORecyclerViewAdapter.class.getSimpleName();
 
     private Integer mLayout = null;
     private LayoutInflater mInflater = null;
@@ -37,7 +36,7 @@ public class ORecylerViewAdapter extends RecyclerView.Adapter implements
     private String[] sections = new String[0];
     private List<ODataRow> dataRows;
 
-    public ORecylerViewAdapter(Context context, int layout) {
+    public ORecyclerViewAdapter(Context context, int layout) {
         super();
         mLayout = layout;
         mInflater = LayoutInflater.from(context);
@@ -99,7 +98,7 @@ public class ORecylerViewAdapter extends RecyclerView.Adapter implements
 
 
     public  class OViewHolder extends RecyclerView.ViewHolder{
-        public OViewHolder(View itemView, final ORecylerViewAdapter.IOnItemClickListener listener1) {
+        public OViewHolder(View itemView, final ORecyclerViewAdapter.IOnItemClickListener listener1) {
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
