@@ -1,0 +1,3 @@
+include ':RecylerViewAdapterLib'
+include ':app'
+rootProject.name = "RecyclerViewAdapterRepo"
