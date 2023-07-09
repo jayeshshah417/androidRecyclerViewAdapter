@@ -22,12 +22,13 @@ public abstract class GenericRecyclerAdapter<T> extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(resLayout, parent, false);
-        return new GenericCustomViewHolder(view);
+        return new RecyclerView.ViewHolder(view) {};
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        onBind(holder,position);
+
+        onBind(holder,position,itemList.get(holder.getAdapterPosition()));
         if(hasRowClick){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -47,15 +48,8 @@ public abstract class GenericRecyclerAdapter<T> extends RecyclerView.Adapter {
         }
     }
 
-    private class GenericCustomViewHolder extends RecyclerView.ViewHolder{
 
-        public GenericCustomViewHolder(@NonNull View itemView) {
-            super(itemView);
-            onViewInit(itemView);
-        }
-    }
+    protected abstract void onBind(@NonNull RecyclerView.ViewHolder holder, int position,T item);
 
-    protected abstract void onBind(@NonNull RecyclerView.ViewHolder holder, int position);
-    protected abstract void onViewInit(@NonNull View itemView);
     protected abstract void onRowClick(int position,T item);
 }
