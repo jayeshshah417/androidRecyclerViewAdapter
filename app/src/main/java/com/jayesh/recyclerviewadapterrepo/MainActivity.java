@@ -6,12 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jayesh.recylerviewadapterlib.GenericRecyclerAdapter;
-import com.jayesh.recylerviewadapterlib.ODataRow;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
