@@ -8,12 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
-public abstract class GenericRecyclerAdapter<T> extends RecyclerView.Adapter {
+/**
+ * Use only for Java Generic Recycler Adapter Can be used directly in activity or fragment and also can be Extended
+ * <ul> Can be used for list or grid view or anywhere where recycler adapter is used  </ul>
+ */
+public abstract class GenericRecyclerAdapterJava<T> extends RecyclerView.Adapter {
     private int resLayout;
     private boolean hasRowClick;
     private List<T> itemList;
-    public GenericRecyclerAdapter(List<T> itemList,int layout,boolean hasRowClick){
+    public GenericRecyclerAdapterJava(List<T> itemList,int layout,boolean hasRowClick){
         this.resLayout = layout;
         this.itemList = itemList;
         this.hasRowClick = hasRowClick;
@@ -33,7 +36,7 @@ public abstract class GenericRecyclerAdapter<T> extends RecyclerView.Adapter {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onRowClick(holder.getAdapterPosition(), itemList.get(holder.getAdapterPosition()));
+                    onRowClick(holder.getAdapterPosition(), itemList.get(holder.getAdapterPosition()),holder.itemView);
                 }
             });
         }
@@ -51,5 +54,5 @@ public abstract class GenericRecyclerAdapter<T> extends RecyclerView.Adapter {
 
     protected abstract void onBind(@NonNull RecyclerView.ViewHolder holder, int position,T item);
 
-    protected abstract void onRowClick(int position,T item);
+    protected abstract void onRowClick(int position,T item, View view);
 }

@@ -1,4 +1,4 @@
-package app.imps.Utilities;
+package com.jayesh.recylerviewadapterlib;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +15,10 @@ import com.jayesh.recylerviewadapterlib.R;
 
 import java.util.List;
 
-
+/**
+ * Use only for Java Generic Spinner Adapter Can be used directly in activity or fragment and also can be Extended
+ * <ul> Can be used for list or grid view or anywhere where recycler adapter is used  </ul>
+ */
 public abstract class GenericSpinnerAdapter<T> extends ArrayAdapter<T> {
     private Context context;
     private List<T> dataList;

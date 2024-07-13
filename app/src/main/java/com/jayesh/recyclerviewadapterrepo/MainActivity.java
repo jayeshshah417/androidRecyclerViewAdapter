@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jayesh.recylerviewadapterlib.GenericRecyclerAdapter;
+import com.jayesh.recylerviewadapterlib.GenericRecyclerAdapterJava;
+
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         stringlist.add("Add");
         stringlist.add("Subtract");
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        GenericRecyclerAdapter genericRecyclerAdapter = new GenericRecyclerAdapter(stringlist,R.layout.activity_main,true){
-
+        GenericRecyclerAdapterJava genericRecyclerAdapter = new GenericRecyclerAdapterJava(stringlist,R.layout.activity_main,true){
 
             @Override
             protected void onBind(@NonNull RecyclerView.ViewHolder holder, int position,Object item) {
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onRowClick(int position, Object item) {
+            protected void onRowClick(int position, Object item, View view) {
                 Log.d("Onclicked","position "+position+"\t item"+(String) item);
             }
         };
